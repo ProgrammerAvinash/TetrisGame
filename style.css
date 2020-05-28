@@ -8,7 +8,6 @@
     display: flex;
     flex-wrap: wrap;
     background-color: yellow;
-    justify-content: stretch;
 }
 
 .grid div{
@@ -18,8 +17,7 @@
     border-style: solid;
     border-width: .02px;
     border-radius: 3px;
-    display: flex;
-    flex-wrap: wrap;
+    
    
 }
 .tetromino{
