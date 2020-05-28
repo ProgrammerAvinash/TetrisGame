@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded' ,() => {
 
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div '));
-    const ScoreDisplay = document.querySelector('#score');
+    let ScoreDisplay = document.querySelector('#score');
     const StartBtn = document.querySelector('#start-button');
     const width =10 ;
     let nextRandom= 0;
     let timer
     let score=0;
+    // const colors =[
+    //     "orange",
+    //     "green"]
+    
 
 
  //The Tetrominoes
@@ -56,7 +60,7 @@ const zTetromino = [
   let random = Math.floor(Math.random()*theTetrominoes.length)
   let current = theTetrominoes[random][currentRotation]
 
-
+ 
 
 //draw the Tetromino 
 function draw() {
@@ -125,7 +129,7 @@ function freeze() {
     function moveLeft() {
         undraw()
         const isAtLeftEdge = current.some(index => (currentPosition + index ) % width === 0)
-
+        
         if(!isAtLeftEdge) currentPosition -=1 
         if(current.some( index => squares[currentPosition + index ].classList.contains('taken'))) {
             currentPosition +=1
@@ -139,6 +143,7 @@ function freeze() {
     //move Tetromino Right 
         function moveRight(){
             undraw()
+
             const isAtRightEdge = current.some( index => (currentPosition + index ) % width === width-1 )
 
             if(!isAtRightEdge) currentPosition +=1 
@@ -157,6 +162,7 @@ function freeze() {
               currentRotation = 0;
           }
           current = theTetrominoes[random][currentRotation];
+
           draw()
      }
     
@@ -214,7 +220,7 @@ function addScore( )   {
         const row = [i,i+1,i+2,i+3,i+4,i+5,i+6,i+7,i+8,i+9]    
 
         if (row.every(index => squares[index].classList.contains('taken'))){ //it shows that every square i.e grid div should contain the class of 'token'
-            score+=10
+            score+=1
             ScoreDisplay.innerHTML = score 
 
             row.forEach(index => {
@@ -229,21 +235,28 @@ function addScore( )   {
             console.log(squares);
             squares.forEach(cell => grid.appendChild(cell))
             
+        //     if(score % 2 === 0){
+        //         grid.style.backgroundColor = colors[0]
+        //     } else{
+        //         grid.style.backgroundColor = colors[1]
+        //     }
 
 
-        }
+         }
     }       
 
 
 }
 
+
 //gameOver 
-function gameOver() {
-    if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-      scoreDisplay.innerHTML = 'end'
-      clearInterval(timer)
+    function gameOver() {
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+        ScoreDisplay.innerHTML = 'end';
+        current.forEach(index => squares[currentPosition + index].classList.add('end'));
+        clearInterval(timer)
+        }
     }
-  }
 
 
 
