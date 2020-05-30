@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded' ,() => {
 
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div '));
@@ -252,7 +251,7 @@ function addScore( )   {
 //gameOver 
     function gameOver() {
         if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-        ScoreDisplay.innerHTML = 'end';
+        ScoreDisplay.innerHTML = 'Game Over';
         current.forEach(index => squares[currentPosition + index].classList.add('end'));
         clearInterval(timer)
         }
@@ -260,4 +259,3 @@ function addScore( )   {
 
 
 
-})

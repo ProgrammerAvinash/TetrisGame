@@ -7,17 +7,17 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    background-color: black;
 }
 
 .grid div{
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 3px;
     width: 18px;
     height: 18px;
 }
 .tetromino{
-    background-color: green;
+    background-color: rgb(255, 217, 0);
 }
 .mini-grid {
     width: 80px;
@@ -25,16 +25,50 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: 20px;
-    background-color: yellow
+    background-color: black;
 }
 .mini-grid div{
     width: 18px;
     height: 18px;
     border-radius: 3px;
-    border : 1px solid black;
+    border : 1px solid white;
    
 }
 .grid .test{
     border: 0px;
   
+}
+
+#start-button{
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/*--------------------------------------- Controller Style Section -----------------------------------------------*/
+.controller{
+    position: relative;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 999;
+    margin-top: -15rem;
+    margin-left: 15rem;
+    
+}
+
+#upArrowKey{
+    font-size: 15px;
+    padding: 5px;
+}
+
+.controller div{
+    width: 40px;
+    height: 40px;
+}
+
+.controller div button{
+    font-size: 20px;
+    color: rgb(255, 217, 0);
+    background-color: black;
 }
