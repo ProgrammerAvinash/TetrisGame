@@ -259,11 +259,14 @@
     
     <div class="controller">
       <div></div>
-      <div><button id="upArrowKey" onclick="Rotate()"><i class="fas fa-undo"></i></button></div>
+      <div><button id="upArrowKey" onclick="Rotate()" ><i class="fas fa-undo"></i></button></div>
       <div></div>
       <div><button id="leftArrowKey" onclick="moveLeft()"><i class="fas fa-caret-left"></i></button></div>
-      <div><button id="downArrowKey" onclick="moveDown()"><i class="fas fa-caret-down"></i></button></div>
+      <div></div>
       <div><button id="rightArrowKey" onclick="moveRight()"><i class="fas fa-caret-right"></i></button></div>
+      <div></div>
+      <div><button id="downArrowKey" onclick="moveDown()" onkeypress="downColorChange()"><i class="fas fa-caret-down"></i></button></div>
+      <div></div>
     </div>
     
     <script src="app.js"></script>

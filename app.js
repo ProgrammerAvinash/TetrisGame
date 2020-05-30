@@ -104,6 +104,7 @@ function moveDown(){
     currentPosition += width
     draw()
     freeze()
+    
 
 }
 
@@ -256,6 +257,32 @@ function addScore( )   {
         clearInterval(timer)
         }
     }
+    
+    document.querySelector("#downArrowKey").addEventListener('click',() =>{
+        document.querySelector("#downArrowKey").style.backgroundColor = "grey";
+        document.querySelector("#upArrowKey").style.backgroundColor = "black";
+        document.querySelector("#leftArrowKey").style.backgroundColor = "black";
+        document.querySelector("#rightArrowKey").style.backgroundColor = "black";
+    });
 
+    document.querySelector("#upArrowKey").addEventListener('click',() =>{
+        document.querySelector("#downArrowKey").style.backgroundColor = "black";
+        document.querySelector("#upArrowKey").style.backgroundColor = "grey";
+        document.querySelector("#leftArrowKey").style.backgroundColor = "black";
+        document.querySelector("#rightArrowKey").style.backgroundColor = "black";
+    })
 
+document.querySelector("#leftArrowKey").addEventListener('click',() =>{
+        document.querySelector("#downArrowKey").style.backgroundColor = "black";
+        document.querySelector("#upArrowKey").style.backgroundColor = "black";
+        document.querySelector("#leftArrowKey").style.backgroundColor = "grey";
+        document.querySelector("#rightArrowKey").style.backgroundColor = "black";
+    })
+    
+document.querySelector("#rightArrowKey").addEventListener('click',() =>{
+        document.querySelector("#downArrowKey").style.backgroundColor = "black";
+        document.querySelector("#upArrowKey").style.backgroundColor = "black";
+        document.querySelector("#leftArrowKey").style.backgroundColor = "black";
+        document.querySelector("#rightArrowKey").style.backgroundColor = "grey";
+    })
 
